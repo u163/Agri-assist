@@ -1,0 +1,15 @@
+# Dependencies and local secrets
+**/node_modules/
+**/.venv/
+**/venv/
+.env
+.env.*
+!.env.example
+# Generated caches
+client/.vite/
+**/__pycache__/
+*.py[cod]
+
+# Runtime uploaded test images
+server/uploads/*
+!server/uploads/.gitkeep
