@@ -1,0 +1,22 @@
+CROP MODEL
+----------
+File: ml/models/best_model.pkl
+Algorithm: Random Forest
+Estimators: 200
+Max depth: 20
+Input features: 7
+Output classes: 22
+
+DISEASE MODEL
+-------------
+File: deep-learning/models/disease_model.h5
+Architecture: EfficientNetB0
+Input shape: 224 x 224 x 3
+Output classes: 38
+Parameters: 4,392,393
+
+EVIDENCE LIMITATIONS
+--------------------
+Training datasets and historical training logs were not found
+in the inspected project folders. Original training provenance
+and historical accuracy metrics remain unverified.
