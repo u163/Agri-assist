@@ -143,3 +143,43 @@ GitHub: https://github.com/u163/Agri-assist
 ---
 
 *Agri-assist: Supporting smarter, data-driven farming decisions.*
+
+## 🤖 ML Model Architecture and Verification
+
+### 1. Crop Recommendation
+
+- **Model artifact:** `ml/models/best_model.pkl`
+- **Algorithm:** Random Forest Classifier
+- **Estimators:** 200
+- **Maximum tree depth:** 20
+- **Input features:** 7
+- **Output classes:** 22 crop labels
+- **Supporting artifacts:** `ml/scalers/scaler.pkl` and `ml/scalers/label_encoder.pkl`
+
+The saved model and label encoder were inspected locally. Their class indices were compatible, with 22 output classes and 22 crop labels.
+
+### 2. Plant Disease Detection
+
+- **Model artifact:** `deep-learning/models/disease_model.h5`
+- **Architecture:** EfficientNetB0
+- **Input shape:** 224 × 224 × 3
+- **Output classes:** 38
+- **Total parameters:** 4,392,393
+- **Class metadata:** `deep-learning/models/disease_classes.json`
+
+The saved model was loaded successfully. The metadata was verified to contain 38 class labels with complete indices from 0 through 37.
+
+### 3. Training Pipeline
+
+The repository includes training scripts:
+
+- `ml/train_model.py`
+- `deep-learning/train_disease_model.py`
+
+The crop training script defines Random Forest and XGBoost evaluation, with model selection based on F1-score. The disease training script defines transfer-learning and fine-tuning workflows.
+
+**Reproducibility note:** The expected training datasets were not found in their configured project locations during verification. Historical training metrics and training plots have not yet been verified. Therefore, no training accuracy or benchmark is claimed here.
+
+### 4. Verification Scope
+
+The checks performed covered saved model loading, model configuration, output class counts, and label-mapping compatibility. These checks do not independently establish model accuracy, dataset provenance, or who originally trained the saved artifacts.
