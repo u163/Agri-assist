@@ -60,7 +60,9 @@ const upload = multer({
  */
 function runCropPrediction(inputData) {
   return new Promise((resolve, reject) => {
-    const pythonCmd = process.platform === 'win32' ? 'python' : 'python3';
+    const pythonCmd = process.platform === 'win32'
+    ? path.join(__dirname, '..', '..', 'deep-learning', '.venv311', 'Scripts', 'python.exe')
+    : 'python3';
     const { nitrogen, phosphorus, potassium, temperature, humidity, ph, rainfall } = inputData;
 
     const args = [

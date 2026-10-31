@@ -237,11 +237,11 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
                 </div>
                 <div>
                   <h1 className="text-lg font-bold font-display text-white tracking-wide">
-                    Crop AI
-                  </h1>
-                  <p className="text-[10px] text-primary-400 font-mono tracking-widest uppercase">
-                    Platform
-                  </p>
+                     Agri-Assist
+                   </h1>
+                   <p className="text-[10px] text-primary-400 font-mono tracking-widest uppercase">
+                     Smart Agriculture
+                   </p>
                 </div>
               </div>
 

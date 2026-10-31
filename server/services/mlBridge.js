@@ -64,7 +64,7 @@ const predictCrop = async (imagePath) => {
 
   return new Promise((resolve, reject) => {
     const pythonCmd = process.platform === 'win32'
-  ? path.join(__dirname, '..', '..', 'deep-learning', '.venv', 'Scripts', 'python.exe')
+  ? path.join(__dirname, '..', '..', 'deep-learning', '.venv311', 'Scripts', 'python.exe')
   : 'python3';
 
     const args = [

@@ -35,7 +35,7 @@ exports.exportJSON = async (req, res) => {
     res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
     res.json({
       success: true,
-      reportTitle: 'AgriSense AI — Enterprise Explainability Report',
+      reportTitle: 'Agri-Assist AI — Enterprise Explainability Report',
       ...report
     });
   } catch (error) {

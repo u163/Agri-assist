@@ -13,3 +13,26 @@ client/.vite/
 # Runtime uploaded test images
 server/uploads/*
 !server/uploads/.gitkeep
+
+# Python environments
+**/.venv/
+**/.venv*/
+**/venv/
+
+# Python cache
+**/__pycache__/
+*.pyc
+
+# Node dependencies
+**/node_modules/
+
+# Build files
+client/dist/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Uploaded temporary files
+server/uploads/

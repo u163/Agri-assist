@@ -183,7 +183,9 @@ const Dashboard = () => {
               {greeting}, <span className="gradient-text">{user?.name || 'Farmer'}</span>
             </h1>
             <p className="text-gray-400 text-sm mt-1 max-w-2xl">
-              Real-time precision crop telemetry, deep learning pathology analytics, and MLOps operational intelligence.
+              Agri-Assist is an AI-powered smart agriculture platform for crop
+              recommendations, plant disease detection, yield prediction, and
+              real-time farm monitoring.
             </p>
           </div>
 

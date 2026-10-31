@@ -28,7 +28,7 @@ const Login = () => {
     try {
       await login(formData.email, formData.password);
       failedAttempts.current = 0;
-      toast.success('Welcome back to AgriSense!');
+      toast.success('Welcome back to Agri-Assist!');
       navigate('/');
     } catch (error) {
       const status = error.response?.status;
@@ -82,7 +82,7 @@ const Login = () => {
         
         <div className="text-center mb-8">
           <h1 className="text-3xl font-display font-bold mb-2">
-            Welcome to <span className="text-primary-400">Agri</span>Sense
+            Welcome to <span className="text-primary-400">Agri</span>-Assist
           </h1>
           <p className="text-gray-400 text-sm">Sign in to continue to your intelligent crop planner</p>
         </div>

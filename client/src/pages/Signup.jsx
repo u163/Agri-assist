@@ -32,7 +32,7 @@ const Signup = () => {
     setLoading(true);
     try {
       await register(formData.name, formData.email, formData.password);
-      toast.success('Account created successfully! Welcome to AgriSense.');
+      toast.success('Account created successfully! Welcome to Agri-Assist.');
       navigate('/');
     } catch (error) {
       const msg = error.response?.data?.errors?.[0]?.msg || error.response?.data?.message || 'Registration failed';
@@ -54,8 +54,8 @@ const Signup = () => {
           <h1 className="text-3xl font-display font-bold mb-2">
             Create Account
           </h1>
-          <p className="text-gray-400 text-sm">Join AgriSense for intelligent crop planning</p>
-        </div>
+          
+        </div><p className="text-gray-400 text-sm">Join Agri-Assist for intelligent crop planning</p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-1">

@@ -22,6 +22,7 @@ let activeModelPath = null;
 let activeExplainerPath = null;
 const pendingRequests = new Map();
 let nextReqId = 0;
+let pythonReady = false;
 
 // ─── Optimal Ranges per Crop (Fallback Engine) ──────────────────────────────
 const CROP_OPTIMAL_RANGES = {
@@ -72,7 +73,7 @@ const BASE_FEATURE_WEIGHTS = {
 // ─── Subprocess Manager Functions ───────────────────────────────────────────
 function getPythonCmd() {
   return process.platform === 'win32'
-    ? path.join(__dirname, '..', '..', 'ml', '.venv', 'Scripts', 'python.exe')
+    ? path.join(__dirname, '..', '..', 'deep-learning', '.venv311', 'Scripts', 'python.exe')
     : 'python3';
 }
 
@@ -111,6 +112,7 @@ function startPythonProcess(modelPath, scalerPath, encoderPath, explainerPath) {
         
         // Check if this is the startup status line
         if (resObj.status && resObj.model_path) {
+          pythonReady = true;
           console.log(`[XAI Service] Persistent subprocess status: ${resObj.status}. Error: ${resObj.error}`);
           continue;
         }
@@ -165,7 +167,7 @@ function querySHAP(features, predictedCrop) {
         console.warn(`[XAI Service] SHAP query timed out for reqId: ${reqId}`);
         resolve({ shapAvailable: false, error: 'Query timed out' });
       }
-    }, 15000);
+    }, 10000);
 
     pendingRequests.set(reqId, { resolve, timer });
 

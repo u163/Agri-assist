@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+from time import perf_counter
 import numpy as np
 import joblib
 
@@ -127,8 +128,19 @@ def main():
                 sys.stdout.flush()
                 continue
 
-            # Compute SHAP values
+            # Compute SHAP values and measure execution time
+            shap_start = perf_counter()
             shap_values = explainer.shap_values(input_scaled)
+            shap_elapsed = perf_counter() - shap_start
+
+            print(
+                json.dumps({
+                    "debug": "SHAP_COMPUTATION_TIME",
+                    "seconds": round(shap_elapsed, 3)
+                }),
+                file=sys.stderr,
+                flush=True
+            )
 
             # Extract SHAP array for the winning class index
             class_shap = None

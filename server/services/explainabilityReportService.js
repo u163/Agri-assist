@@ -421,7 +421,7 @@ function generatePDFHTML(report) {
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Explainability Report - AgriSense AI</title>
+<title>Explainability Report - Agri-Assist AI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -481,7 +481,7 @@ function generatePDFHTML(report) {
 
 <!-- Cover Page -->
 <div class="cover">
-  <h1>🌾 AgriSense AI</h1>
+  <h1>🌾 Agri-Assist AI</h1>
   <h2>Enterprise Explainability Report</h2>
   <div class="badge">AI-Powered Crop Planning System</div>
   <div class="meta" style="margin-top: 40px;">
@@ -560,7 +560,7 @@ function generatePDFHTML(report) {
   </table>
 
   <div class="footer">
-    <p>AgriSense AI — Enterprise Explainability Report</p>
+    <p>Agri-Assist AI — Enterprise Explainability Report</p>
     <p>Generated on ${now} | Confidential</p>
   </div>
 </div>
